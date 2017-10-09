@@ -1,4 +1,7 @@
 #Pseudo code Part 1
+#Pseudo-code = Katelyn
+#Code = Hannah
+
 #import packages (os, numpy, pandas, plotnine (from plotnine import *))
 #open file for Lecture11.fasta
 #set lists for sequence length, GC content
@@ -7,15 +10,14 @@
 #possibly makes lists into dataframe? #not sure #may be able to just plot from list variable?
 #use ggplot to make histogram, set x axis as sequence length and GC content for each histogram respectively
 
+
 #Work through for Exercise7_Problem2
 #Use Flu_data.csv (comma separated)
-    #Note - there is no info in Row0,Coloumn0
     #Note - Column0 is age group information
-    #Note - Row0 is year data was collected
+    #Note - Each column is a different year data was collected, but did not include years in the data set. 
 #Pseudo-code = Hannah
 #Code = Katelyn
 
 #import needed packages (numpy, pandas, plotnine)
 #read data file
-#plot hospitalizations vs year
-    #Note - need some sort of way to differentiate between the age categories (column0)
+#plot hospitalizations vs age group
