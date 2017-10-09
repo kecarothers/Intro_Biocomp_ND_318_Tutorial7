@@ -1,3 +1,12 @@
+#Pseudo code Part 1
+#import packages (os, numpy, pandas, plotnine (from plotnine import *))
+#open file for Lecture11.fasta
+#set lists for sequence length, GC content
+#calculate sequence lengths, append to list
+#calculate GC content, append to list
+#possibly makes lists into dataframe? #not sure #may be able to just plot from list variable?
+#use ggplot to make histogram, set x axis as sequence length and GC content for each histogram respectively
+
 #Work through for Exercise7_Problem2
 #Use Flu_data.csv (comma separated)
     #Note - there is no info in Row0,Coloumn0
