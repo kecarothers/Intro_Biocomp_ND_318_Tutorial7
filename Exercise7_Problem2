@@ -6,3 +6,7 @@
 #Pseudo-code = Hannah
 #Code = Katelyn
 
+#import needed packages (numpy, pandas, plotnine)
+#read data file
+#plot hospitalizations vs year
+    #Note - need some sort of way to differentiate between the age categories (column0)
