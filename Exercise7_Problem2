@@ -1,5 +1,5 @@
 #Work through for Exercise7_Problem2
-#Use Flu_data.csv
+#Use Flu_data.csv (comma separated)
     #Note - there is no info in Row0,Coloumn0
     #Note - Column0 is age group information
     #Note - Row0 is year data was collected
