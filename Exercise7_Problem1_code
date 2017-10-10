@@ -6,7 +6,9 @@
 import numpy
 import pandas
 import scipy
-import matplotlib.pyplot
+import plotnine
+from plotnine import *
+import matplotlib.pyplot as plt
 
 #open file for Lecture11.fasta
 DNAseq=open("Lecture11.fasta","r")
@@ -39,8 +41,9 @@ seqDF_GC = pandas.DataFrame(list(zip(sequenceID,GCcontent)),columns=['sequenceID
 #use ggplot to make histogram, set x axis as sequence length 
 a=ggplot(seqDF_length,aes(x="sequenceLength"))
 a+geom_histogram()+theme_classic()
+a.show()
 
 #use ggplot to make histrogram, set x axis as GC content
 b=ggplot(seqDF_GC,aes(x="GCpercent"))
 b+geom_histogram()+theme_classic()
-
+b.show()
