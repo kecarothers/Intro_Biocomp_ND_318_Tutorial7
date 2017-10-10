@@ -1,17 +1,8 @@
 #Using Katelyn's pseudo code, writing code for Problem 1
 #Pseudo-code = Katelyn
 #Code = Hannah
-#Pseudo code Part 1
-#Pseudo-code = Katelyn
-#Code = Hannah
 
 #import packages (os, numpy, pandas, plotnine (from plotnine import *))
-#open file for Lecture11.fasta
-#set lists for sequence length, GC content
-#calculate sequence lengths, append to list
-#calculate GC content, append to list
-#possibly makes lists into dataframe? #not sure #may be able to just plot from list variable?
-#use ggplot to make histogram, set x axis as sequence length and GC content for each histogram respectively
 import numpy
 import pandas
 from plotnine import *
