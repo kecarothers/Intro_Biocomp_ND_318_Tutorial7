@@ -6,7 +6,7 @@
 import numpy
 import pandas
 import scipy
-from plotnine import *
+import matplotlib.pyplot
 
 #open file for Lecture11.fasta
 DNAseq=open("Lecture11.fasta","r")
@@ -20,25 +20,27 @@ GCcontent=[]
 for line in DNAseq:
     line=line.strip()
     if '>' in line:
-        sequenceID.append(Line[1:])
+        sequenceID.append(line[1:])
     else:    
         seqLength=float(len(line)) #makes sequence length a number with a decimal
         sequenceLength.append(seqLength) #adds sequence length to the list
         Gnumber=line.count("G") #count number of G in sequence
         Cnumber=line.count("C") #count number of C in sequence
-        GCpercent=(((Gnumber+Cnumber)/seqLenght)*100) #calculate the GC content
+        GCpercent=(((Gnumber+Cnumber)/seqLength)*100) #calculate the GC content
         GCcontent.append(GCpercent) #adds GC content to list
 
 #close file
 DNAseq.close()
 
-#combine into a single data frame
-seqDF = pandas.DataFrame(list(zip(sequenceID,sequenceLength,percentGC)),columns=['sequenceID','sequenceLength','percentGC'])
+#make data frames
+seqDF_length = pandas.DataFrame(list(zip(sequenceID,sequenceLength)),columns=['sequenceID','sequenceLength'])
+seqDF_GC = pandas.DataFrame(list(zip(sequenceID,GCcontent)),columns=['sequenceID','GCpercent'])
 
 #use ggplot to make histogram, set x axis as sequence length 
-a=ggplot(seqDF,aes(x="sequenceLength"))
+a=ggplot(seqDF_length,aes(x="sequenceLength"))
 a+geom_histogram()+theme_classic()
 
 #use ggplot to make histrogram, set x axis as GC content
-b=ggplot(seqDF,aes(x="percentGC"))
-b+geom_histogram()+theme-classic()
+b=ggplot(seqDF_GC,aes(x="GCpercent"))
+b+geom_histogram()+theme_classic()
+
