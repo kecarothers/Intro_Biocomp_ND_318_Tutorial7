@@ -11,33 +11,28 @@ from plotnine import *
 DNAseq=open("Lecture11.fasta","r")
 
 #set lists for sequence length, GC content
+sequenceID=[]
 sequenceLength=[]
 GCcontent=[]
 
-#calculate sequence lengths, append to list
+#calculate sequence lengths and GC content, append to list
 for line in DNAseq:
     line=line.strip()
     if '>' in line:
+        sequenceID.append(Line[1:])
+    else:    
         seqLength=float(len(line)) #makes sequence length a number with a decimal
         sequenceLength.append(seqLength) #adds sequence length to the list
-    else: #go to next line
-    
-#calculate GC content, append to list
-for line in DNAseq:
-    line=line.strip()
-    if '>' in line:
         Gnumber=line.count("G") #count number of G in sequence
         Cnumber=line.count("C") #count number of C in sequence
-        GCpercent=((Gnumber+Cnumber)/seqLength) #calculate the GC content
+        GCpercent=(((Gnumber+Cnumber)/seqLenght)*100) #calculate the GC content
         GCcontent.append(GCpercent) #adds GC content to list
-    else: #go to next line  
 
 #close file
 DNAseq.close()
 
 #combine into a single data frame
-seqDF = pandas.DataFrame(list(zip(sequenceLength,percentGC)),columns=['sequenceLength','percentGC'])
-
+seqDF = pandas.DataFrame(list(zip(sequenceID,sequenceLength,percentGC)),columns=['sequenceID','sequenceLength','percentGC'])
 
 #use ggplot to make histogram, set x axis as sequence length 
 a=ggplot(seqDF,aes(x="sequenceLength"))
