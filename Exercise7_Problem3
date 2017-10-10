@@ -1,0 +1,5 @@
+#import packages
+#import data.txt
+#find means of four populations, populate new array?
+#Make barplot with mean array
+#Make scatterplot of all observations
