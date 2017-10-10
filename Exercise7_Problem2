@@ -1,16 +1,3 @@
-#Pseudo code Part 1
-#Pseudo-code = Katelyn
-#Code = Hannah
-
-#import packages (os, numpy, pandas, plotnine (from plotnine import *))
-#open file for Lecture11.fasta
-#set lists for sequence length, GC content
-#calculate sequence lengths, append to list
-#calculate GC content, append to list
-#possibly makes lists into dataframe? #not sure #may be able to just plot from list variable?
-#use ggplot to make histogram, set x axis as sequence length and GC content for each histogram respectively
-
-
 #Work through for Exercise7_Problem2
 #Use Flu_data.csv (comma separated)
     #Note - Column0 is age group information
@@ -21,3 +8,15 @@
 #import needed packages (numpy, pandas, plotnine)
 #read data file
 #plot hospitalizations vs age group
+
+import pandas
+import numpy
+import os
+import plotnine
+from plotnine import *
+#Influenza Hospitalizations in Singapore, Ang et al 2014
+FluData = pandas.read_csv("Flu_data_final.csv",sep=",",header=0)
+print(FluData)
+a=ggplot(FluData,aes(x="Age",y="Hospitalizations/100,000"))
+a+geom_point()+coord_cartesian()
+#the plot works but the x-axis is not in the right order
