@@ -1,1 +1,35 @@
 #Using Katelyn's pseudo code, writing code for Problem 1
+#Pseudo-code = Katelyn
+#Code = Hannah
+
+#import packages (os, numpy, pandas, plotnine (from plotnine import *))
+import numpy
+import pandas
+from plotnine import *
+
+#open file for Lecture11.fasta
+DNAseq=open("Lecture11.fasta","r")
+
+#set lists for sequence length, GC content
+sequenceLength=[]
+GCcontent=[]
+
+#calculate sequence lengths, append to list
+for line in DNAseq:
+    line=line.strip()
+    if '>' in line:
+        seqLength=float(len(line)) #makes sequence length a number with a decimal
+        sequenceLength.append #FIGURE OUT CODE TO APPEND LIST
+    else: #go to next line
+    
+#calculate GC content, append to list
+for line in DNAseq:
+    line=line.strip()
+    if '>' in line:
+        Gnumber=line.count("G")
+        Cnumber=line.count("C")
+        GCpercent==((Gnumber+Cnumber)/seqLength) #is it two = that makes the line the actual math?
+        GCcontent.append #FIGURE OUT CODE TO APPEND LIST
+    else:    
+#possibly makes lists into dataframe? #not sure #may be able to just plot from list variable?
+#use ggplot to make histogram, set x axis as sequence length and GC content for each histogram respectively
