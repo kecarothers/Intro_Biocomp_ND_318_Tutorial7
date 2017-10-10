@@ -19,17 +19,30 @@ for line in DNAseq:
     line=line.strip()
     if '>' in line:
         seqLength=float(len(line)) #makes sequence length a number with a decimal
-        sequenceLength.append #FIGURE OUT CODE TO APPEND LIST
+        sequenceLength.append(seqLength) #adds sequence length to the list
     else: #go to next line
     
 #calculate GC content, append to list
 for line in DNAseq:
     line=line.strip()
     if '>' in line:
-        Gnumber=line.count("G")
-        Cnumber=line.count("C")
-        GCpercent==((Gnumber+Cnumber)/seqLength) #is it two = that makes the line the actual math?
-        GCcontent.append #FIGURE OUT CODE TO APPEND LIST
-    else:    
-#possibly makes lists into dataframe? #not sure #may be able to just plot from list variable?
-#use ggplot to make histogram, set x axis as sequence length and GC content for each histogram respectively
+        Gnumber=line.count("G") #count number of G in sequence
+        Cnumber=line.count("C") #count number of C in sequence
+        GCpercent=((Gnumber+Cnumber)/seqLength) #calculate the GC content
+        GCcontent.append(GCpercent) #adds GC content to list
+    else: #go to next line  
+
+#close file
+DNAseq.close()
+
+#combine into a single data frame
+seqDF = pandas.DataFrame(list(zip(sequenceLength,percentGC)),columns=['sequenceLength','percentGC'])
+
+
+#use ggplot to make histogram, set x axis as sequence length 
+a=ggplot(seqDF,aes(x="sequenceLength"))
+a+geom_histogram()+theme_classic()
+
+#use ggplot to make histrogram, set x axis as GC content
+b=ggplot(seqDF,aes(x="percentGC")
+b+geom_histogram()+theme_classic()
