@@ -5,6 +5,7 @@
 #import packages (os, numpy, pandas, plotnine (from plotnine import *))
 import numpy
 import pandas
+import scipy
 from plotnine import *
 
 #open file for Lecture11.fasta
@@ -39,5 +40,5 @@ a=ggplot(seqDF,aes(x="sequenceLength"))
 a+geom_histogram()+theme_classic()
 
 #use ggplot to make histrogram, set x axis as GC content
-b=ggplot(seqDF,aes(x="percentGC")
-b+geom_histogram()+theme_classic()
+b=ggplot(seqDF,aes(x="percentGC"))
+b+geom_histogram()+theme-classic()
