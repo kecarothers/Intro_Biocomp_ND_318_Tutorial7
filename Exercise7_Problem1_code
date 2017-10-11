@@ -39,8 +39,9 @@ seqDF_GC = pandas.DataFrame(list(zip(sequenceID,GCcontent)),columns=['sequenceID
 
 #use ggplot to make histogram, set x axis as sequence length 
 a=ggplot(seqDF_length,aes(x="sequenceLength"))
-a+geom_histogram()+theme_classic()
+a+geom_histogram(fill='green',color='black')+theme_classic()
 
 #use ggplot to make histrogram, set x axis as GC content
 b=ggplot(seqDF_GC,aes(x="GCpercent"))
-b+geom_histogram()+theme_classic()
+b+geom_histogram(fill='blue',color='black')+theme_classic()
+ 
