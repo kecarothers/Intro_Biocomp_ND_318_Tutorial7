@@ -17,5 +17,7 @@ from plotnine import *
 #Influenza Hospitalizations in Singapore, Ang et al 2014
 FluData = pandas.read_csv("Flu_data_final.csv",sep=",",header=0)
 print(FluData)
-a=ggplot(FluData,aes(x="Age",y="Hospitalizations/100,000"))
-a+geom_point()+coord_cartesian()
+#a=ggplot(FluData,aes(x="Age",y="Hospitalizations/100,000"))
+#a+geom_point()+coord_cartesian()
+a=ggplot(FluData,aes(x="Age",y="Hospitalizations/100,000"))+theme_classic()+geom_point()
+a+xlab("Age(y)")+ylab("Hospitalizations/100,000")+stat_smooth(method="lm")+scale_y_log10() #y axis is log-scaled, trend line is linear but spline doesn't work
