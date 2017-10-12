@@ -1,5 +1,36 @@
 #import packages
 #import data.txt
-#find means of four populations, populate new array?
-#Make barplot with mean array
+#populate observations from different directions to respective lists
+#take mean of each list direction
+#plot means in barplot
 #Make scatterplot of all observations
+import pandas
+import numpy
+import os
+from plotnine import *
+Data = pandas.DataFrame.from_csv("data.txt",sep=",",header=0)
+#print Data
+#set lists for each direction
+north=[]
+south=[]
+east=[]
+west=[]
+#append data to lists for each direction
+for row in Data:
+    if 'north' in row:
+        north.append(row[:1])
+print(north)
+#this does not work, only prints blank list
+import csv
+f = open('data.txt')
+csv_f = csv.reader(f)
+for row in csv_f:
+    if 'north' in row:
+        north.append(row[1])
+print (north)
+numpy.array(north).astype(np.float)
+northmean = numpy.mean(north)
+print(northmean)
+
+
+
